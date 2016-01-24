@@ -1,6 +1,7 @@
 # Chirper
 
-This README outlines the details of collaborating on this Ember application.
+Project-overview to Ember@2. Get more details at [Ludu.Co](https://www.ludu.co/course/ember)
+
 A short introduction of this app could easily go here.
 
 ## Prerequisites
