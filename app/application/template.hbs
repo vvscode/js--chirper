@@ -10,11 +10,16 @@
               <img class="avatar" src="/images/avatar.jpg"/>
               t4t5
           {{/link-to}}
-
-            <button class="chirp">Chirp</button>
+            <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
         </nav>
 
     </div>
 </header>
 
 {{liquid-outlet}}
+
+{{#if showingComposeModal}}
+  {{#modal-dialog translucentOverlay=true close=(action 'toggleComposeModal')}}
+      <p>Trying out the modal</p>
+  {{/modal-dialog}}
+{{/if}}
