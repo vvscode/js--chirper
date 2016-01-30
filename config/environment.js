@@ -6,13 +6,18 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    apiURL: 'http://localhost:9000',
+    'ember-cli-mirage': { enabled: false },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
     },
-
+    // This is what you need to add:
+    contentSecurityPolicy: {
+      'connect-src': "http://localhost:9000"
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
