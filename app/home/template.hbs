@@ -2,7 +2,10 @@
 
 <div class="page-container home-page">
     <aside class="left">
-        {{profile-glance user=model.user}}
+      {{profile-glance user=sessionAccount.currentUser}}
+      {{#if session.isAuthenticated}}
+          <button class="logout" {{action 'logout'}}>Log out</button>
+      {{/if}}
     </aside>
 
     <main>
