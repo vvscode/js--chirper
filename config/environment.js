@@ -14,6 +14,10 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    'ember-simple-auth': {
+      authenticationRoute: 'index',
+      routeIfAlreadyAuthenticated: 'home'
+    },
     // This is what you need to add:
     contentSecurityPolicy: {
       'connect-src': "http://localhost:9000"
