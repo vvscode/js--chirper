@@ -11,14 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{compose-modal}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#compose-modal}}
-      template block text
-    {{/compose-modal}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().find('h6').text().trim(), 'Compose Chirp');
+  assert.ok(this.$().has('button.chirp'), 'It has chirp button');
 });

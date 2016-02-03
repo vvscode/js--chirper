@@ -9,16 +9,9 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });"
 
-  this.render(hbs`{{follow-button}}`);
+  this.set('user', { followers: [] });
+  this.render(hbs`{{follow-button profile=user}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#follow-button}}
-      template block text
-    {{/follow-button}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'Follow');
+  assert.ok(this.$().has('button'), 'Follow button');
 });

@@ -11,14 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{status-update}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#status-update}}
-      template block text
-    {{/status-update}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().has('button:contains("What are you doing?")'), '');
+  assert.ok(this.$().has('img.avatar'), '');
 });

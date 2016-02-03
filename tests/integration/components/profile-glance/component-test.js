@@ -11,14 +11,9 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{profile-glance}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#profile-glance}}
-      template block text
-    {{/profile-glance}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().has('.h4:contains("Chirps")'));
+  assert.ok(this.$().has('.h4:contains("Following")'));
+  assert.ok(this.$().has('.h4:contains("Followers")'));
+  assert.ok(this.$().has('.cover-photo'));
+  assert.ok(this.$().has('.avatar'));
 });

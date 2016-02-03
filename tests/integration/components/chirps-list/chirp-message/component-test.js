@@ -11,14 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{chirps-list/chirp-message}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#chirps-list/chirp-message}}
-      template block text
-    {{/chirps-list/chirp-message}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().has('.avatar'), 'It has avatar block');
+  assert.ok(this.$().has('.info'), 'It has info block');
 });

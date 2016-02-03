@@ -11,14 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{chirps-list}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#chirps-list}}
-      template block text
-    {{/chirps-list}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().has('.no-chirps'), 'No chirps - block .no-chirps');
+  assert.equal(this.$().text().trim(), 'There are no chirps to display.');
 });
