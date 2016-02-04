@@ -14,3 +14,12 @@ test('it renders', function(assert) {
   assert.equal(this.$().find('h6').text().trim(), 'Compose Chirp');
   assert.ok(this.$().has('button.chirp'), 'It has chirp button');
 });
+
+test('long text makes label red', function(assert) {
+  var longText = 'Lorem ipsum dolor sit amet, eam ex cibo elitr tamquam. Nusquam adipiscing ea sea, habemus minimum vis cu. Pri ponderum percipitur ex, eu mei tamquam eloquentiam. Ius apeirian insolens ea.';
+
+  this.set('chirpText', longText);
+  this.render(hbs`{{compose-modal chirpText=chirpText}}`);
+
+  assert.ok(this.$().find('p.remaining-chars').hasClass('warning'));
+});
